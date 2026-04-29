@@ -10,14 +10,14 @@ const Navbar = () => {
   const links = (
     <>
       <Link
-        className="text-white flex items-center gap-2  rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a]  "
+        className="text-white flex items-center gap-2  rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a]  font-serif "
         href={"/"}
       >
         {" "}
         <IoHome /> Home
       </Link>
       <Link
-        className="text-white flex items-center gap-2  rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] "
+        className="text-white flex items-center gap-2 font-serif rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] "
         href={"/"}
       >
         {" "}
@@ -26,15 +26,15 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#0d1f30] shadow-sm px-4 flex justify-between items-center">
+    <div className="navbar bg-[#0d1f30] shadow-sm px-4 py-5 flex justify-between items-center">
       {/* 1. Logo Section */}
       <div className="flex items-center gap-2 md:ml-5 ">
-        <Image src={logo} alt="logo pic" width={50} height={50} />
+        <Image src={logo} alt="logo pic" width={70} height={70} />
         <div className="">
-          <h2 className="text-white text-xl md:text-2xl font-semibold">
-            Tile <span className="text-[#af875a]">Gallery</span>
+          <h2 className="text-white text-xl font-serif md:text-3xl font-semibold">
+            Tiles <span className="text-[#af875a] ">Gallery</span>
           </h2>
-          <p className="text-white text-xs">CURATE YOUR SPACE</p>
+          <p className="text-white text-mdfont-serif">CURATE YOUR SPACE</p>
         </div>
       </div>
 
