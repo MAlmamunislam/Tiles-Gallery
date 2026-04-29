@@ -18,7 +18,7 @@ const Navbar = () => {
       </Link>
       <Link
         className="text-white flex items-center gap-2 font-serif rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] "
-        href={"/"}
+        href={"/tiles"}
       >
         {" "}
         <LuLayoutGrid /> All Tiles{" "}
