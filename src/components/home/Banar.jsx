@@ -36,8 +36,6 @@ const Banar = () => {
           </div>
         </div>
       </div>
-
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-[#af875a]"></div>
     </div>
   );
 };

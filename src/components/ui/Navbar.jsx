@@ -26,7 +26,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#0d1f30] shadow-sm px-4 py-5 flex justify-between items-center">
+    <div className="navbar bg-[#0d1f30] shadow-sm px-4  flex justify-between items-center">
       {/* 1. Logo Section */}
       <div className="flex items-center gap-2 md:ml-5 ">
         <Image src={logo} alt="logo pic" width={70} height={70} />
@@ -50,7 +50,7 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full">
+            <div className="w-10 rounded-full  border-gray-500 border-4">
               <img
                 alt="User Profile"
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
