@@ -1,0 +1,91 @@
+import Image from "next/image";
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { IoSearchSharp } from "react-icons/io5";
+const fetchData = async () => {
+  const getPromise = await fetch(
+    "https://tiles-gallery-omega.vercel.app/tiles.json",
+  );
+  const data = await getPromise.json();
+  return data;
+};
+
+const page = async () => {
+  const tiles = await fetchData();
+
+  console.log(tiles);
+
+  return (
+     <div className="bg-gray-100">
+
+    <div className="container mx-auto ">
+      <div className=" py-16 border-b border-gray-100">
+        <div className="container mx-auto px-6 text-center">
+          
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+            Explore Our Full Collection
+          </h1>
+          <p className="text-gray-500 max-w-2xl mx-auto mb-10">
+            Find the perfect tiles for your home, from classic marble to modern
+            geometric patterns. Use the search below to find exactly what you
+            need.
+          </p>
+
+       
+          <div className="max-w-xl mx-auto relative group">
+            <input
+              type="text"
+              placeholder="Search tiles by title..."
+              className="w-full px-8 py-5 rounded-2xl bg-white shadow-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pl-14"
+            />
+            <IoSearchSharp className="h-6 w-6 absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
+          </div>
+        </div>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4   ">
+        {tiles.map((tile) => (
+          <div key={tile.id}>
+            <div className="max-w-sm bg-white rounded-xl container mx-auto shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 group">
+              <div className="relative overflow-hidden">
+                <Image
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  src={tile.image}
+                  alt="Ceramic Blue Glaze"
+                  width={1000}
+                  height={1000}
+                />
+                <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gray-800">
+                  In Stock
+                </div>
+              </div>
+
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h2 className="text-xl font-bold  text-gray-900 tracking-tight">
+                    {tile.title}
+                  </h2>
+                  <span className="text-lg font-extrabold text-blue-600">
+                    ${tile.price}
+                  </span>
+                </div>
+
+                <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">
+                  {tile.description}
+                </p>
+
+                {/* ভিউ ডিটেইলস বাটন */}
+                <button className="w-full bg-gray-900 hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                  View Details
+                  <FaArrowRight />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+     </div>
+  );
+};
+
+export default page;

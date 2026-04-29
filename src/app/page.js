@@ -4,6 +4,7 @@ import Description from "@/components/home/Description";
 import MarqueeView from "@/components/home/MarqueeView";
 
 
+
 export default function Home() {
   return (
     <div>
@@ -23,9 +24,11 @@ export default function Home() {
         <CardSection/>
 
       </div>
+      {/* Why Choose Us */}
       <div>
         <Description/>
       </div>
+      
     </div>
   );
 }

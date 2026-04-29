@@ -15,7 +15,7 @@ const CardSection = async () => {
 //   console.log(limitedTiles);
 
   return (
-    <div className="bg-[#f6f0eb] py-10 ">
+    <div className="bg-[#f6f0eb] py-10 pt-10">
       <div className="container mx-auto ">
         <div className="flex flex-col items-center justify-center mb-5">
           <h2 className="text-5xl font-bold font-serif">Featured Tiles </h2>

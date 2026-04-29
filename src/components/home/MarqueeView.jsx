@@ -11,7 +11,7 @@ const MarqueeView = () => {
     "Slate Outdoor Stone",
   ];
   return (
-    <div className=" bg-[#0d2237] ">
+    <div className=" bg-[#0d2237]  ">
      <div className="container mx-auto flex ">
           <p className="text-2xl text-[#a57e4d] text-center font-serif">New Arrival</p>
     <Marquee speed={50} pauseOnHover={true} className=" bg-[#0d2237] py-3 font-medium">
