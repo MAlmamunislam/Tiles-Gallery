@@ -1,0 +1,122 @@
+[
+  {
+    "id": "tile_001",
+    "title": "Ceramic Blue Glaze",
+    "description": "Premium ceramic tile with a glossy blue glaze finish, perfect for modern bathrooms.",
+    "image": "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Ceramic",
+    "price": 45.99,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Ceramic",
+    "inStock": true
+  },
+  {
+    "id": "tile_002",
+    "title": "Carrara White Marble",
+    "description": "Classic Italian white marble with grey veins for a luxurious look.",
+    "image": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Marble",
+    "price": 89.50,
+    "currency": "USD",
+    "dimensions": "80x80 cm",
+    "material": "Natural Stone",
+    "inStock": true
+  },
+  {
+    "id": "tile_003",
+    "title": "Geometric Terracotta",
+    "description": "Earth-toned terracotta tiles with hand-pressed patterns.",
+    "image": "https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Terracotta",
+    "price": 32.00,
+    "currency": "USD",
+    "dimensions": "30x30 cm",
+    "material": "Clay",
+    "inStock": true
+  },
+  {
+    "id": "tile_004",
+    "title": "Slate Grey Stone",
+    "description": "Rugged slate stone tiles for a natural, anti-slip outdoor flooring.",
+    "image": "https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Stone",
+    "price": 55.25,
+    "currency": "USD",
+    "dimensions": "60x120 cm",
+    "material": "Slate",
+    "inStock": true
+  },
+  {
+    "id": "tile_005",
+    "title": "Emerald Hexagon",
+    "description": "Vibrant emerald green hexagonal tiles for kitchen backsplashes.",
+    "image": "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Ceramic",
+    "price": 28.99,
+    "currency": "USD",
+    "dimensions": "15x15 cm",
+    "material": "Ceramic",
+    "inStock": true
+  },
+  {
+    "id": "tile_006",
+    "title": "Rustic Wood Plank",
+    "description": "Porcelain tiles that look exactly like reclaimed wood.",
+    "image": "https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Porcelain",
+    "price": 42.00,
+    "currency": "USD",
+    "dimensions": "20x120 cm",
+    "material": "Porcelain",
+    "inStock": true
+  },
+  {
+    "id": "tile_007",
+    "title": "Black Granite Mirror",
+    "description": "High-gloss black granite tiles with a reflective surface.",
+    "image": "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Granite",
+    "price": 95.00,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Granite",
+    "inStock": true
+  },
+  {
+    "id": "tile_008",
+    "title": "Victorian Mosaic",
+    "description": "Intricate mosaic patterns inspired by classic architecture.",
+    "image": "https://images.pexels.com/photos/6782567/pexels-photo-6782567.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Mosaic",
+    "price": 65.40,
+    "currency": "USD",
+    "dimensions": "30x30 cm",
+    "material": "Mixed",
+    "inStock": true
+  },
+  {
+    "id": "tile_009",
+    "title": "Matte Concrete Grey",
+    "description": "Minimalist matte finish tiles with an industrial look.",
+    "image": "https://images.pexels.com/photos/6492403/pexels-photo-6492403.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Porcelain",
+    "price": 38.00,
+    "currency": "USD",
+    "dimensions": "60x60 cm",
+    "material": "Porcelain",
+    "inStock": true
+  },
+  {
+    "id": "tile_010",
+    "title": "Golden Vein Onyx",
+    "description": "Rare onyx stone tiles for high-end luxury interiors.",
+    "image": "https://images.pexels.com/photos/6585750/pexels-photo-6585750.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Onyx",
+    "price": 150.00,
+    "currency": "USD",
+    "dimensions": "100x100 cm",
+    "material": "Natural Stone",
+    "inStock": true
+  }
+]
