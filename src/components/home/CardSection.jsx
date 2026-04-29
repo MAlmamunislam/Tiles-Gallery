@@ -15,14 +15,14 @@ const CardSection = async () => {
 //   console.log(limitedTiles);
 
   return (
-    <div className="bg-[#f6f0eb] ">
+    <div className="bg-[#f6f0eb] py-10 ">
       <div className="container mx-auto ">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mb-5">
           <h2 className="text-5xl font-bold font-serif">Featured Tiles </h2>
           <p className=" text-[20px]  font-serif">Handpicked styles for you </p>
           <div className="border my-2 border-[#93490c] px-10"></div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4  ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4   ">
           {limitedTiles.map((tile) => (
             <div key={tile.id} >
               <div className="max-w-sm bg-white rounded-xl container mx-auto shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 group">
