@@ -66,6 +66,7 @@ const Navbar = () => {
             <div className="w-20 rounded-full  border-gray-500 border-4">
               <Image
                src={user?.image ? user.image : avatar}
+              referrerPolicy="no-referrer"
                 width={1000}
                 height={1000}
                 alt="user image"
