@@ -13,14 +13,14 @@ const Navbar = () => {
         className="text-white flex items-center gap-2  rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a]  font-serif "
         href={"/"}
       >
-        {" "}
+   
         <IoHome /> Home
       </Link>
       <Link
         className="text-white flex items-center gap-2 font-serif rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] "
         href={"/tiles"}
       >
-        {" "}
+
         <LuLayoutGrid /> All Tiles{" "}
       </Link>
     </>
@@ -40,8 +40,6 @@ const Navbar = () => {
 
       {/* 2. desktop Menu */}
       <div className="hidden md:flex gap-8">{links}</div>
-
-      {/* 3. search & Profile Section */}
       <div className=" md:mr-5">
         {/* Dropdown Section */}
         <div className="dropdown dropdown-end">
@@ -61,12 +59,12 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-[#0d1f30] text-white rounded-box z-[1] mt-3 w-52 p-2 shadow border border-gray-700"
           >
-            {/* মোবাইলে মেনুগুলো এখানে দেখাবে (md:hidden) */}
+       
             <li className="md:hidden ">{links}</li>
 
             <hr className="md:hidden my-1 border-gray-600" />
 
-            {/* সাধারণ প্রোফাইল অপশন */}
+     
             <li>
               <a className="justify-between hover:bg-[#af875a]">Profile</a>
             </li>

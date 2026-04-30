@@ -16,18 +16,18 @@ const DetaisCard = async ({ params }) => {
 
 //   console.log(targedTiles);
   return (
-    <div className="bg-amber-50 p-50" >
+    <div className="bg-amber-50 p-2 md:p-50" >
       <div className="max-w-4xl mx-auto bg-gray-100 rounded-[30px] shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row ">
         <div className="md:w-1/2 h-64 md:h-auto relative">
           <Image
-            src={targedTiles.image}
+            src={targedTiles?.image}
             width={1000}
             height={1000}
             alt=  {targedTiles?.title}
             className="h-full w-full object-cover hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute top-5 left-5 bg-blue-600/90 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase">
-            {targedTiles.material}
+            {targedTiles?.material}
           </div>
         </div>
 
@@ -53,7 +53,7 @@ const DetaisCard = async ({ params }) => {
               <span className="w-24 font-semibold text-xs uppercase text-gray-400">
                 Material
               </span>
-              <span className="text-sm font-medium">{targedTiles.material}</span>
+              <span className="text-sm font-medium">{targedTiles?.material}</span>
             </div>
             <div className="flex items-center text-green-600">
               <span className="w-24 font-semibold text-xs uppercase  text-gray-400 ">
@@ -69,7 +69,7 @@ const DetaisCard = async ({ params }) => {
                 Price
               </p>
               <h2 className="text-3xl font-extrabold text-blue-600 leading-none">
-                ${targedTiles.price}
+                ${targedTiles?.price}
               </h2>
             </div>
 
