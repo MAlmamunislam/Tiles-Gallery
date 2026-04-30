@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 const fetchData = async () => {
@@ -12,7 +13,7 @@ const fetchData = async () => {
 const CardSection = async () => {
   const tiles = await fetchData();
   const limitedTiles = tiles.slice(0, 4);
-//   console.log(limitedTiles);
+  //   console.log(limitedTiles);
 
   return (
     <div className="bg-[#f6f0eb] py-10 pt-10">
@@ -24,9 +25,8 @@ const CardSection = async () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4   ">
           {limitedTiles.map((tile) => (
-            <div key={tile.id} >
+            <div key={tile.id}>
               <div className="max-w-sm bg-white rounded-xl container mx-auto shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 group">
-               
                 <div className="relative overflow-hidden">
                   <Image
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -40,7 +40,6 @@ const CardSection = async () => {
                   </div>
                 </div>
 
-      
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
                     <h2 className="text-xl font-bold  text-gray-900 tracking-tight">
@@ -55,11 +54,12 @@ const CardSection = async () => {
                     {tile.description}
                   </p>
 
-                  {/* ভিউ ডিটেইলস বাটন */}
-                  <button className="w-full bg-gray-900 hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
-                    View Details
-                <FaArrowRight />
-                  </button>
+                  <Link href={`/tiles/${tile.id}`}>
+                    <button className="w-full bg-gray-900 hover:cursor-pointer hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                      View Details
+                      <FaArrowRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

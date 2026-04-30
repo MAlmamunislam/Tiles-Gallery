@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
@@ -86,24 +87,23 @@ const page = async ({ searchParams }) => {
                     {tile.description}
                   </p>
 
-                  <button className="w-full bg-gray-900 hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
-                    View Details
-                    <FaArrowRight />
-                  </button>
+                  <Link href={`/tiles/${tile.id}`}>
+                    <button className="w-full bg-gray-900 hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2 hover:cursor-pointer">
+                      View Details
+                      <FaArrowRight />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
           {filteredTiles.length === 0 && (
             <div className="col-span-full flex flex-col items-center justify-center py-20 px-6 text-center ">
-          
-            
-
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 No Tiles Available
               </h3>
               <p className="text-gray-500 max-w-sm mx-auto mb-8">
-                We couldn't find any results for{" "}
+                We couldn't find any results for
                 <span className="font-semibold text-blue-600">"{query}"</span>.
                 Please try searching with different keywords or check back
                 later.
