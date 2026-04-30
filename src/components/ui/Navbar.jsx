@@ -9,17 +9,21 @@ import { IoHome } from "react-icons/io5";
 import { LuLayoutGrid } from "react-icons/lu";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const router = useRouter();
   const handleLogOut = async () => {
-    await authClient.signOut({
+    const { data, error } = await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
           router.push("/"); // redirect to login page
         },
       },
     });
+    if(!error){
+      toast.success('You have been logged out successfully')
+    }
   };
   const userData = authClient.useSession();
   const user = userData.data?.user;

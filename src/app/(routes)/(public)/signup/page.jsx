@@ -1,9 +1,13 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { toast } from "react-toastify";
+
 
 const page = () => {
+    const router = useRouter();
   const handleGoogleSinnup = async () => {
     await authClient.signIn.social({
       provider: "google",
@@ -24,7 +28,14 @@ const page = () => {
       image: formdata.image,
       //  callbackURL: "https://example.com/callback",
     });
-    console.log(data, error);
+    if (!error) {
+        router.push("/");
+        toast.success('Profile Update Sucssesfully')
+      }
+   if(error){
+    toast.error( error.message)
+   
+   }
   };
   return (
     <div>
@@ -110,7 +121,7 @@ const page = () => {
 
           <button
             onClick={handleGoogleSinnup}
-            className="btn bg-white text-black border-[#e5e5e5]"
+            className="btn bg-white text-black mx-5 border-[#e5e5e5]"
           >
             <svg
               aria-label="Google logo"

@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
+import { toast } from "react-toastify";
 
 const page = () => {
    const handleSubmit = async (e) => {
@@ -10,7 +11,7 @@ const page = () => {
       const formData = new FormData(e.currentTarget);
       const formdata = Object.fromEntries(formData.entries());
   
-      console.log(formdata);
+
       const { data, error } = await authClient.signIn.email({
        
         email: formdata.email, // required
@@ -18,7 +19,14 @@ const page = () => {
       
         callbackURL: "/",
       });
-      console.log(data , error)
+if(!error){
+ toast.success('User Log in Sucssesfully ')
+
+}
+if(error){
+ toast.error( error.message)
+
+}
     };
   return (
     <div>
