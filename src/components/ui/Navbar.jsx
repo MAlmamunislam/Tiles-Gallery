@@ -1,26 +1,41 @@
+"use client";
 import React from "react";
 import logo from "@/assets/image/logo.png";
+import avatar from "@/assets/image/man.png";
 import Image from "next/image";
 import Link from "next/link";
 import { IoHome } from "react-icons/io5";
 
 import { LuLayoutGrid } from "react-icons/lu";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
+  const handleLogOut = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/"); // redirect to login page
+        },
+      },
+    });
+  };
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  console.log(user);
   const links = (
     <>
       <Link
         className="text-white flex items-center gap-2  rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a]  font-serif "
         href={"/"}
       >
-   
         <IoHome /> Home
       </Link>
       <Link
         className="text-white flex items-center gap-2 font-serif rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] "
         href={"/tiles"}
       >
-
         <LuLayoutGrid /> All Tiles{" "}
       </Link>
     </>
@@ -48,10 +63,12 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full  border-gray-500 border-4">
-              <img
-                alt="User Profile"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            <div className="w-20 rounded-full  border-gray-500 border-4">
+              <Image
+               src={user?.image ? user.image : avatar}
+                width={1000}
+                height={1000}
+                alt="user image"
               />
             </div>
           </div>
@@ -59,19 +76,49 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-[#0d1f30] text-white rounded-box z-[1] mt-3 w-52 p-2 shadow border border-gray-700"
           >
-       
             <li className="md:hidden ">{links}</li>
 
             <hr className="md:hidden my-1 border-gray-600" />
+            {user ? (
+              <div>
+                <li>
+                  <Link
+                    className=" gap-2 hover:bg-[#af875a]  font-serif"
+                    href={"/"}
+                  >
+                    Profile
+                  </Link>
+                </li>
 
-     
-            <li>
-              <a className="justify-between hover:bg-[#af875a]">Profile</a>
-            </li>
-
-            <li>
-              <a className="hover:bg-[#af875a]">Logout</a>
-            </li>
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="gap-2 hover:bg-[#af875a] font-serif w-full text-left"
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </div>
+            ) : (
+              <div>
+                <li>
+                  <Link
+                    className="gap-2 hover:bg-[#af875a] font-serif w-full text-left"
+                    href={"/signup"}
+                  >
+                    Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="gap-2 hover:bg-[#af875a] font-serif w-full text-left"
+                    href={"/login"}
+                  >
+                    Log In
+                  </Link>
+                </li>
+              </div>
+            )}
           </ul>
         </div>
       </div>

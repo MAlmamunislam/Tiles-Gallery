@@ -10,7 +10,7 @@ const page = () => {
     const formData = new FormData(e.currentTarget);
     const formdata = Object.fromEntries(formData.entries());
 
-    console.log(formdata);
+//     console.log(formdata);
     const { data, error } = await authClient.signUp.email({
       name: formdata.name, // required
       email: formdata.email, // required
