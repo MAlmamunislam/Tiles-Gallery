@@ -85,7 +85,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     className=" gap-2 hover:bg-[#af875a]  font-serif"
-                    href={"/"}
+                    href={"/profile"}
                   >
                     Profile
                   </Link>
