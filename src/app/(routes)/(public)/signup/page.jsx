@@ -30,7 +30,7 @@ const page = () => {
     });
     if (!error) {
         router.push("/");
-        toast.success('Profile Update Sucssesfully')
+        toast.success('Sign Up Sucssesfully')
       }
    if(error){
     toast.error( error.message)
