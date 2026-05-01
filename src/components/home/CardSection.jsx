@@ -55,7 +55,7 @@ const CardSection = async () => {
                   </p>
 
                   <Link href={`/tiles/${tile.id}`}>
-                    <button className="w-full bg-gray-900 hover:cursor-pointer hover:bg-blue-600 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                    <button className="w-full bg-gray-900 hover:cursor-pointer hover:bg-amber-950 text-white font-medium py-3 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
                       View Details
                       <FaArrowRight />
                     </button>

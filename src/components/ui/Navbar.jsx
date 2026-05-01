@@ -8,10 +8,12 @@ import { IoHome } from "react-icons/io5";
 
 import { LuLayoutGrid } from "react-icons/lu";
 import { authClient } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   const router = useRouter();
   const handleLogOut = async () => {
     const { data, error } = await authClient.signOut({
@@ -21,23 +23,27 @@ const Navbar = () => {
         },
       },
     });
-    if(!error){
-      toast.success('You have been logged out successfully')
+    if (!error) {
+      toast.success("You have been logged out successfully");
     }
   };
   const userData = authClient.useSession();
   const user = userData.data?.user;
-  console.log(user);
+
   const links = (
     <>
       <Link
-        className="text-white flex items-center gap-2  rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a]  font-serif "
+className={`text-white flex items-center gap-2 rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] font-serif ${
+  pathname === "/" ? "border-2 p-2 rounded-md border-[#af875a]" : ""
+}`}
         href={"/"}
       >
         <IoHome /> Home
       </Link>
       <Link
-        className="text-white flex items-center gap-2 font-serif rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] "
+       className={`text-white flex items-center gap-2 rounded-md transition-colors md:hover:bg-transparent hover:bg-[#af875a] font-serif ${
+  pathname === "/tiles" ? "border-2 p-2 rounded-md border-[#af875a]" : ""
+}`}
         href={"/tiles"}
       >
         <LuLayoutGrid /> All Tiles{" "}
@@ -69,8 +75,8 @@ const Navbar = () => {
           >
             <div className="w-20 rounded-full  border-gray-500 border-4">
               <Image
-               src={user?.image ? user.image : avatar}
-              referrerPolicy="no-referrer"
+                src={user?.image ? user.image : avatar}
+                referrerPolicy="no-referrer"
                 width={1000}
                 height={1000}
                 alt="user image"
