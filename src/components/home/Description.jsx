@@ -1,3 +1,5 @@
+'use client'
+import { motion } from "framer-motion";
 import React from 'react';
 const features = [
   {
@@ -26,7 +28,16 @@ const Description = () => {
      return (
        <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
+
         {/* Section Header */}
+        < motion.div 
+         initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        
+        >
+
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
             Why Choose Us
@@ -35,11 +46,20 @@ const Description = () => {
             Experience excellence with our world-class services and high-quality tile collections.
           </p>
         </div>
+        </ motion.div >
         
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((item, index) => (
-            <div 
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.2, // stagger
+              }}
+              viewport={{ once: true }}
+
               key={index} 
               className="p-10 rounded-[2.5rem] bg-gray-50 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-gray-100 text-center group"
             >
@@ -52,7 +72,7 @@ const Description = () => {
               <p className="text-gray-500 text-sm leading-relaxed">
                 {item.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
